@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TME Market Pulse — automatic rates.json updater.
+TME Market Pulse - automatic rates.json updater (v2).
 
 Fetches the six first-mortgage national averages from Mortgage News Daily
 (the project's exclusive source for these rates) and writes rates.json.
@@ -12,9 +12,15 @@ Compliance rules baked in:
     and writes nothing, so a good file is never overwritten with garbage.
   * Sanity bounds reject implausible values before they can be published.
 
-Run by .github/workflows/update-rates.yml — no human in the loop.
+v2 fix: the source encodes the sign as an HTML entity (Change: &#x2B;0.11)
+and uses CRLF line endings, so v1 parsed 0 of 6. This version decodes every
+HTML entity with html.unescape() and collapses ALL whitespace (newlines
+included) before matching. Verified against the live page: 6 of 6.
+
+Run by .github/workflows/update-rates.yml - no human in the loop.
 """
 
+import html as htmllib
 import json, os, re, sys, urllib.request
 from datetime import datetime, timezone, timedelta
 
@@ -33,6 +39,7 @@ PRODUCTS = [
 
 RATE_MIN, RATE_MAX = 0.50, 25.00      # plausible mortgage rate band
 CHANGE_MAX = 3.00                      # a >3pt single-day move is a parse error
+MINUSES = "−–—"         # unicode minus / en dash / em dash
 
 
 def fetch(url: str) -> str:
@@ -46,21 +53,22 @@ def fetch(url: str) -> str:
         return r.read().decode("utf-8", "replace")
 
 
-def to_text(html: str) -> str:
-    """Strip scripts/styles/tags and normalise whitespace, so the parser reads
-    the page the way a person does and survives most markup changes."""
-    html = re.sub(r"(?is)<(script|style|noscript)[^>]*>.*?</\1>", " ", html)
-    html = re.sub(r"(?s)<[^>]+>", "\n", html)
-    html = (html.replace("&nbsp;", " ").replace("&amp;", "&")
-                .replace("&lt;", "<").replace("&gt;", ">").replace("&#39;", "'"))
-    return re.sub(r"[ \t\r\f\v]+", " ", html)
+def to_text(page: str) -> str:
+    """Strip scripts/styles/tags, decode entities, and flatten whitespace so the
+    parser reads the page the way a person does and survives markup changes."""
+    page = re.sub(r"(?is)<(script|style|noscript)[^>]*>.*?</\1>", " ", page)
+    page = re.sub(r"(?s)<[^>]+>", "\n", page)
+    page = htmllib.unescape(page)          # &#x2B; -> +, &#13; -> CR, &nbsp; -> space
+    for ch in MINUSES:
+        page = page.replace(ch, "-")
+    return re.sub(r"\s+", " ", page)       # collapse EVERY run of whitespace
 
 
 def parse_rate(text: str, label: str):
-    """Find '<label> ... X.XX% ... Change: ±Y.YY' within a tight window."""
+    """Find '<label> ... X.XX% ... Change: +/-Y.YY' within a tight window."""
     pat = (re.escape(label) + r"\s*(?:" + re.escape(label) + r"\s*)?"
            r"(\d{1,2}\.\d{2})\s*%.{0,60}?Change:\s*([+-]?\d{1,2}\.\d{2})")
-    for m in re.finditer(pat, text, re.S):
+    for m in re.finditer(pat, text):
         rate, change = float(m.group(1)), float(m.group(2))
         if RATE_MIN <= rate <= RATE_MAX and abs(change) <= CHANGE_MAX:
             return round(rate, 2), round(change, 2)
@@ -85,11 +93,12 @@ def parse_as_of(text: str) -> str:
 
 def main() -> int:
     try:
-        text = to_text(fetch(URL))
+        raw = fetch(URL)
     except Exception as e:
         print(f"::error::Could not reach Mortgage News Daily: {e}")
         return 1
 
+    text = to_text(raw)
     rates, found = {}, 0
     for key, label in PRODUCTS:
         rate, change = parse_rate(text, label)
@@ -102,8 +111,11 @@ def main() -> int:
             found += 1
 
     if found == 0:
-        print("::error::Parsed 0 of 6 rates - Mortgage News Daily layout may have "
-              "changed. Leaving the existing rates.json untouched.")
+        # Leave a breadcrumb so the next person can diagnose from the log alone.
+        print(f"::error::Parsed 0 of 6 rates. Received {len(raw)} bytes. "
+              f"Leaving the existing rates.json untouched.")
+        snippet = text[:400].replace("\n", " ")
+        print(f"::notice::First 400 chars received: {snippet}")
         return 1
 
     payload = {

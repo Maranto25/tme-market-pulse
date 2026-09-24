@@ -1,0 +1,43 @@
+# TME Market Pulse — automatic daily rates feed
+# Fetches the six Mortgage News Daily first-mortgage averages and commits
+# rates.json. No human in the loop. Free on public repositories.
+name: Update rates.json
+
+on:
+  schedule:
+    # Mortgage News Daily publishes weekdays around 4 PM ET.
+    # Three passes cover the afternoon/evening in both EST and EDT.
+    # A pass that finds no change commits nothing, so extras are harmless.
+    - cron: '0 21 * * 1-5'   # 4 PM EST / 5 PM EDT
+    - cron: '0 23 * * 1-5'   # 6 PM EST / 7 PM EDT
+    - cron: '30 1 * * 2-6'   # 8:30 PM EST / 9:30 PM EDT (late catch)
+  workflow_dispatch:          # the "Run workflow" button, for on-demand runs
+
+permissions:
+  contents: write             # lets the job commit rates.json back to the repo
+
+concurrency:
+  group: update-rates
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Fetch today's rates from Mortgage News Daily
+        run: python3 update_rates.py
+
+      - name: Commit rates.json if it changed
+        run: |
+          if git diff --quiet -- rates.json; then
+            echo "No change in rates.json — nothing to commit."
+            exit 0
+          fi
+          git config user.name  "TME Rates Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add rates.json
+          git commit -m "Rates as of $(python3 -c "import json;print(json.load(open('rates.json'))['asOf'])")"
+          git push

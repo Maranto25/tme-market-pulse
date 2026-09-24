@@ -1,4 +1,4 @@
-# TME Market Pulse — automatic daily rates feed
+# TME Market Pulse — automatic daily rates feed (v2)
 # Fetches the six Mortgage News Daily first-mortgage averages and commits
 # rates.json. No human in the loop. Free on public repositories.
 name: Update rates.json
@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Fetch today's rates from Mortgage News Daily
         run: python3 update_rates.py

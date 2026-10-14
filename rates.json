@@ -1,32 +1,32 @@
 {
   "source": "Mortgage News Daily",
-  "asOf": "2026-10-13",
-  "updatedAt": "2026-10-14T01:59:33+00:00",
+  "asOf": "2026-10-14",
+  "updatedAt": "2026-10-14T21:25:45+00:00",
   "updatedBy": "GitHub Actions (automatic)",
   "rates": {
     "fixed30": {
-      "rate": 7.46,
-      "change": -0.02
+      "rate": 7.45,
+      "change": -0.01
     },
     "fixed15": {
       "rate": 7.14,
-      "change": -0.01
+      "change": 0.0
     },
     "fha30": {
       "rate": 7.13,
-      "change": -0.02
+      "change": 0.0
     },
     "va30": {
       "rate": 7.15,
-      "change": -0.02
+      "change": 0.0
     },
     "jumbo30": {
       "rate": 7.62,
-      "change": -0.01
+      "change": 0.0
     },
     "arm76": {
-      "rate": 6.88,
-      "change": -0.02
+      "rate": 6.85,
+      "change": -0.03
     }
   }
 }

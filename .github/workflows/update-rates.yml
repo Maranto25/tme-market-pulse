@@ -1,20 +1,23 @@
-# TME Market Pulse — automatic daily rates feed (v2)
-# Fetches the six Mortgage News Daily first-mortgage averages and commits
-# rates.json. No human in the loop. Free on public repositories.
+# TME Market Pulse — automatic data feeds (v3)
+# 1) rates.json  — the six Mortgage News Daily first-mortgage averages
+# 2) market.json — 10-Year, 2-Year, Freddie Mac, Fed funds, WTI oil (v3: replaces
+#    the dead public relay services the page used to call from the browser)
+# No human in the loop. Free on public repositories.
 name: Update rates.json
 
 on:
   schedule:
     # Mortgage News Daily publishes weekdays around 4 PM ET.
     # Three passes cover the afternoon/evening in both EST and EDT.
-    # A pass that finds no change commits nothing, so extras are harmless.
     - cron: '0 21 * * 1-5'   # 4 PM EST / 5 PM EDT
     - cron: '0 23 * * 1-5'   # 6 PM EST / 7 PM EDT
     - cron: '30 1 * * 2-6'   # 8:30 PM EST / 9:30 PM EDT (late catch)
+    # v3: hourly during market hours so Treasury and oil stay fresh.
+    - cron: '17 13-20 * * 1-5'
   workflow_dispatch:          # the "Run workflow" button, for on-demand runs
 
 permissions:
-  contents: write             # lets the job commit rates.json back to the repo
+  contents: write             # lets the job commit the feeds back to the repo
 
 concurrency:
   group: update-rates
@@ -28,16 +31,29 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Fetch today's rates from Mortgage News Daily
+        id: rates
+        continue-on-error: true   # a rates miss must not block market data
         run: python3 update_rates.py
 
-      - name: Commit rates.json if it changed
+      - name: Fetch market data (Treasury, Freddie Mac, Fed funds, oil)
+        id: market
+        continue-on-error: true   # a market miss must not block rates
+        run: python3 update_market.py
+
+      - name: Commit whatever changed
         run: |
-          if git diff --quiet -- rates.json; then
-            echo "No change in rates.json — nothing to commit."
+          for f in rates.json market.json; do if [ -f "$f" ]; then git add "$f"; fi; done
+          if git diff --cached --quiet; then
+            echo "No change — nothing to commit."
             exit 0
           fi
           git config user.name  "TME Rates Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add rates.json
-          git commit -m "Rates as of $(python3 -c "import json;print(json.load(open('rates.json'))['asOf'])")"
+          git commit -m "Feeds updated $(date -u +%Y-%m-%dT%H:%MZ) — rates as of $(python3 -c "import json;print(json.load(open('rates.json'))['asOf'])")"
           git push
+
+      - name: Flag a failed feed (sends the usual GitHub failure email)
+        if: steps.rates.outcome == 'failure' || steps.market.outcome == 'failure'
+        run: |
+          echo "::error::rates: ${{ steps.rates.outcome }} · market: ${{ steps.market.outcome }} — the other feed was still saved."
+          exit 1

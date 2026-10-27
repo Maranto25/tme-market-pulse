@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T00:21:02+00:00",
+  "updatedAt": "2026-10-27T00:28:32+00:00",
   "updatedBy": "GitHub Actions (automatic)",
   "treasury10y": {
     "source": "fred",
@@ -13,7 +13,12 @@
       "value": 5.0
     }
   },
-  "oil": null,
+  "oil": {
+    "price": 107.89,
+    "previous_close": 110.01,
+    "datetime": "2026-10-20",
+    "source": "FRED DCOILWTICO (daily spot)"
+  },
   "series": {
     "DGS10": {
       "source": "U.S. Treasury daily par yield curve",
@@ -59,8 +64,38 @@
         "value": 6.71
       }
     },
-    "DFEDTARU": null,
-    "DFEDTARL": null,
-    "DCOILWTICO": null
+    "DFEDTARU": {
+      "source": "FRED DFEDTARU",
+      "latest": {
+        "date": "2026-10-26",
+        "value": 4.0
+      },
+      "previous": {
+        "date": "2026-10-25",
+        "value": 4.0
+      }
+    },
+    "DFEDTARL": {
+      "source": "FRED DFEDTARL",
+      "latest": {
+        "date": "2026-10-26",
+        "value": 3.75
+      },
+      "previous": {
+        "date": "2026-10-25",
+        "value": 3.75
+      }
+    },
+    "DCOILWTICO": {
+      "source": "FRED DCOILWTICO",
+      "latest": {
+        "date": "2026-10-20",
+        "value": 107.89
+      },
+      "previous": {
+        "date": "2026-10-19",
+        "value": 110.01
+      }
+    }
   }
 }

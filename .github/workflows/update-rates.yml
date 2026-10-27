@@ -38,7 +38,10 @@ jobs:
       - name: Fetch market data (Treasury, Freddie Mac, Fed funds, oil)
         id: market
         continue-on-error: true   # a market miss must not block rates
-        run: python3 update_market.py
+        timeout-minutes: 6
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}   # optional; adds Fed funds + oil fallback
+        run: python3 -u update_market.py
 
       - name: Commit whatever changed
         run: |

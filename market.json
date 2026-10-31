@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T00:34:12+00:00",
+  "updatedAt": "2026-10-31T02:07:12+00:00",
   "updatedBy": "GitHub Actions (automatic)",
   "treasury10y": {
     "source": "fred",
@@ -14,10 +14,10 @@
     }
   },
   "oil": {
-    "price": 102.95,
-    "previous_close": 101.76,
-    "datetime": "2026-10-30T20:59:59+00:00",
-    "source": "Yahoo Finance CL=F"
+    "price": 103.37,
+    "previous_close": 105.25,
+    "datetime": "2026-10-27",
+    "source": "FRED DCOILWTICO (daily spot)"
   },
   "series": {
     "DGS10": {

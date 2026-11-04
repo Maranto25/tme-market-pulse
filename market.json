@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-04T07:55:21+00:00",
+  "updatedAt": "2026-11-04T20:27:25+00:00",
   "updatedBy": "GitHub Actions (automatic)",
   "treasury10y": {
     "source": "fred",
@@ -14,10 +14,10 @@
     }
   },
   "oil": {
-    "price": 96.39,
-    "previous_close": 104.12,
-    "datetime": "2026-11-04T07:45:13+00:00",
-    "source": "Yahoo Finance CL=F"
+    "price": 99.64,
+    "previous_close": 100.06,
+    "datetime": "2026-11-03",
+    "source": "FRED DCOILWTICO (daily spot)"
   },
   "series": {
     "DGS10": {
@@ -67,34 +67,34 @@
     "DFEDTARU": {
       "source": "FRED DFEDTARU",
       "latest": {
-        "date": "2026-11-03",
+        "date": "2026-11-04",
         "value": 4.0
       },
       "previous": {
-        "date": "2026-11-02",
+        "date": "2026-11-03",
         "value": 4.0
       }
     },
     "DFEDTARL": {
       "source": "FRED DFEDTARL",
       "latest": {
-        "date": "2026-11-03",
+        "date": "2026-11-04",
         "value": 3.75
       },
       "previous": {
-        "date": "2026-11-02",
+        "date": "2026-11-03",
         "value": 3.75
       }
     },
     "DCOILWTICO": {
       "source": "FRED DCOILWTICO",
       "latest": {
-        "date": "2026-10-27",
-        "value": 103.37
+        "date": "2026-11-03",
+        "value": 99.64
       },
       "previous": {
-        "date": "2026-10-26",
-        "value": 105.25
+        "date": "2026-11-02",
+        "value": 100.06
       }
     }
   }

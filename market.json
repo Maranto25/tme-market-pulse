@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-11-04T20:27:25+00:00",
+  "updatedAt": "2026-11-05T01:22:30+00:00",
   "updatedBy": "GitHub Actions (automatic)",
   "treasury10y": {
     "source": "fred",
     "label": "U.S. Treasury daily par yield curve",
     "latest": {
-      "date": "2026-11-03",
-      "value": 4.95
+      "date": "2026-11-04",
+      "value": 4.9
     },
     "previous": {
-      "date": "2026-11-02",
-      "value": 4.91
+      "date": "2026-11-03",
+      "value": 4.95
     }
   },
   "oil": {
@@ -23,23 +23,23 @@
     "DGS10": {
       "source": "U.S. Treasury daily par yield curve",
       "latest": {
-        "date": "2026-11-03",
-        "value": 4.95
+        "date": "2026-11-04",
+        "value": 4.9
       },
       "previous": {
-        "date": "2026-11-02",
-        "value": 4.91
+        "date": "2026-11-03",
+        "value": 4.95
       }
     },
     "DGS2": {
       "source": "U.S. Treasury daily par yield curve",
       "latest": {
-        "date": "2026-11-03",
-        "value": 4.61
+        "date": "2026-11-04",
+        "value": 4.58
       },
       "previous": {
-        "date": "2026-11-02",
-        "value": 4.59
+        "date": "2026-11-03",
+        "value": 4.61
       }
     },
     "MORTGAGE30US": {

@@ -1,45 +1,45 @@
 {
-  "updatedAt": "2026-11-10T20:29:32+00:00",
+  "updatedAt": "2026-11-11T01:06:43+00:00",
   "updatedBy": "GitHub Actions (automatic)",
   "treasury10y": {
     "source": "fred",
     "label": "U.S. Treasury daily par yield curve",
     "latest": {
-      "date": "2026-11-09",
-      "value": 4.88
+      "date": "2026-11-10",
+      "value": 4.98
     },
     "previous": {
-      "date": "2026-11-06",
-      "value": 4.86
+      "date": "2026-11-09",
+      "value": 4.88
     }
   },
   "oil": {
-    "price": 86.41,
-    "previous_close": 90.52,
-    "datetime": "2026-11-10T20:19:24+00:00",
-    "source": "Yahoo Finance CL=F"
+    "price": 99.64,
+    "previous_close": 100.06,
+    "datetime": "2026-11-03",
+    "source": "FRED DCOILWTICO (daily spot)"
   },
   "series": {
     "DGS10": {
       "source": "U.S. Treasury daily par yield curve",
       "latest": {
-        "date": "2026-11-09",
-        "value": 4.88
+        "date": "2026-11-10",
+        "value": 4.98
       },
       "previous": {
-        "date": "2026-11-06",
-        "value": 4.86
+        "date": "2026-11-09",
+        "value": 4.88
       }
     },
     "DGS2": {
       "source": "U.S. Treasury daily par yield curve",
       "latest": {
-        "date": "2026-11-09",
-        "value": 4.56
+        "date": "2026-11-10",
+        "value": 4.73
       },
       "previous": {
-        "date": "2026-11-06",
-        "value": 4.51
+        "date": "2026-11-09",
+        "value": 4.56
       }
     },
     "MORTGAGE30US": {

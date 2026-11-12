@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-11-12T08:45:42+00:00",
+  "updatedAt": "2026-11-12T20:54:20+00:00",
   "updatedBy": "GitHub Actions (automatic)",
   "treasury10y": {
     "source": "fred",
     "label": "U.S. Treasury daily par yield curve",
     "latest": {
-      "date": "2026-11-10",
-      "value": 4.98
+      "date": "2026-11-12",
+      "value": 5.1
     },
     "previous": {
-      "date": "2026-11-09",
-      "value": 4.88
+      "date": "2026-11-10",
+      "value": 4.98
     }
   },
   "oil": {
@@ -23,66 +23,66 @@
     "DGS10": {
       "source": "U.S. Treasury daily par yield curve",
       "latest": {
-        "date": "2026-11-10",
-        "value": 4.98
+        "date": "2026-11-12",
+        "value": 5.1
       },
       "previous": {
-        "date": "2026-11-09",
-        "value": 4.88
+        "date": "2026-11-10",
+        "value": 4.98
       }
     },
     "DGS2": {
       "source": "U.S. Treasury daily par yield curve",
       "latest": {
-        "date": "2026-11-10",
-        "value": 4.73
+        "date": "2026-11-12",
+        "value": 4.86
       },
       "previous": {
-        "date": "2026-11-09",
-        "value": 4.56
+        "date": "2026-11-10",
+        "value": 4.73
       }
     },
     "MORTGAGE30US": {
       "source": "Freddie Mac PMMS",
       "latest": {
-        "date": "2026-11-05",
-        "value": 7.18
+        "date": "2026-11-12",
+        "value": 7.11
       },
       "previous": {
-        "date": "2026-10-29",
-        "value": 7.24
+        "date": "2026-11-05",
+        "value": 7.18
       }
     },
     "MORTGAGE15US": {
       "source": "Freddie Mac PMMS",
       "latest": {
-        "date": "2026-11-05",
-        "value": 6.57
+        "date": "2026-11-12",
+        "value": 6.45
       },
       "previous": {
-        "date": "2026-10-29",
-        "value": 6.6
+        "date": "2026-11-05",
+        "value": 6.57
       }
     },
     "DFEDTARU": {
       "source": "FRED DFEDTARU",
       "latest": {
-        "date": "2026-11-11",
+        "date": "2026-11-12",
         "value": 4.0
       },
       "previous": {
-        "date": "2026-11-10",
+        "date": "2026-11-11",
         "value": 4.0
       }
     },
     "DFEDTARL": {
       "source": "FRED DFEDTARL",
       "latest": {
-        "date": "2026-11-11",
+        "date": "2026-11-12",
         "value": 3.75
       },
       "previous": {
-        "date": "2026-11-10",
+        "date": "2026-11-11",
         "value": 3.75
       }
     },

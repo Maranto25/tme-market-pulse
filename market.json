@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T08:39:31+00:00",
+  "updatedAt": "2026-11-13T20:31:07+00:00",
   "updatedBy": "GitHub Actions (automatic)",
   "treasury10y": {
     "source": "fred",
@@ -67,22 +67,22 @@
     "DFEDTARU": {
       "source": "FRED DFEDTARU",
       "latest": {
-        "date": "2026-11-12",
+        "date": "2026-11-13",
         "value": 4.0
       },
       "previous": {
-        "date": "2026-11-11",
+        "date": "2026-11-12",
         "value": 4.0
       }
     },
     "DFEDTARL": {
       "source": "FRED DFEDTARL",
       "latest": {
-        "date": "2026-11-12",
+        "date": "2026-11-13",
         "value": 3.75
       },
       "previous": {
-        "date": "2026-11-11",
+        "date": "2026-11-12",
         "value": 3.75
       }
     },

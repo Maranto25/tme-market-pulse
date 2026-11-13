@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T20:54:20+00:00",
+  "updatedAt": "2026-11-13T01:43:09+00:00",
   "updatedBy": "GitHub Actions (automatic)",
   "treasury10y": {
     "source": "fred",
@@ -14,9 +14,9 @@
     }
   },
   "oil": {
-    "price": 99.64,
-    "previous_close": 100.06,
-    "datetime": "2026-11-03",
+    "price": 89.62,
+    "previous_close": 89.62,
+    "datetime": "2026-11-11",
     "source": "FRED DCOILWTICO (daily spot)"
   },
   "series": {
@@ -89,12 +89,12 @@
     "DCOILWTICO": {
       "source": "FRED DCOILWTICO",
       "latest": {
-        "date": "2026-11-03",
-        "value": 99.64
+        "date": "2026-11-11",
+        "value": 89.62
       },
       "previous": {
-        "date": "2026-11-02",
-        "value": 100.06
+        "date": "2026-11-10",
+        "value": 89.62
       }
     }
   }

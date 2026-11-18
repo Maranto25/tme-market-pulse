@@ -1,45 +1,45 @@
 {
-  "updatedAt": "2026-11-18T08:59:36+00:00",
+  "updatedAt": "2026-11-18T21:27:39+00:00",
   "updatedBy": "GitHub Actions (automatic)",
   "treasury10y": {
     "source": "fred",
     "label": "U.S. Treasury daily par yield curve",
     "latest": {
-      "date": "2026-11-17",
-      "value": 5.1
+      "date": "2026-11-18",
+      "value": 5.07
     },
     "previous": {
-      "date": "2026-11-16",
-      "value": 5.12
+      "date": "2026-11-17",
+      "value": 5.1
     }
   },
   "oil": {
-    "price": 89.62,
-    "previous_close": 89.62,
-    "datetime": "2026-11-11",
+    "price": 89.53,
+    "previous_close": 89.24,
+    "datetime": "2026-11-17",
     "source": "FRED DCOILWTICO (daily spot)"
   },
   "series": {
     "DGS10": {
       "source": "U.S. Treasury daily par yield curve",
       "latest": {
-        "date": "2026-11-17",
-        "value": 5.1
+        "date": "2026-11-18",
+        "value": 5.07
       },
       "previous": {
-        "date": "2026-11-16",
-        "value": 5.12
+        "date": "2026-11-17",
+        "value": 5.1
       }
     },
     "DGS2": {
       "source": "U.S. Treasury daily par yield curve",
       "latest": {
-        "date": "2026-11-17",
+        "date": "2026-11-18",
         "value": 4.8
       },
       "previous": {
-        "date": "2026-11-16",
-        "value": 4.83
+        "date": "2026-11-17",
+        "value": 4.8
       }
     },
     "MORTGAGE30US": {
@@ -67,34 +67,34 @@
     "DFEDTARU": {
       "source": "FRED DFEDTARU",
       "latest": {
-        "date": "2026-11-17",
+        "date": "2026-11-18",
         "value": 4.0
       },
       "previous": {
-        "date": "2026-11-16",
+        "date": "2026-11-17",
         "value": 4.0
       }
     },
     "DFEDTARL": {
       "source": "FRED DFEDTARL",
       "latest": {
-        "date": "2026-11-17",
+        "date": "2026-11-18",
         "value": 3.75
       },
       "previous": {
-        "date": "2026-11-16",
+        "date": "2026-11-17",
         "value": 3.75
       }
     },
     "DCOILWTICO": {
       "source": "FRED DCOILWTICO",
       "latest": {
-        "date": "2026-11-11",
-        "value": 89.62
+        "date": "2026-11-17",
+        "value": 89.53
       },
       "previous": {
-        "date": "2026-11-10",
-        "value": 89.62
+        "date": "2026-11-16",
+        "value": 89.24
       }
     }
   }

@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-11-24T11:31:07+00:00",
+  "updatedAt": "2026-11-24T23:04:17+00:00",
   "updatedBy": "GitHub Actions (automatic)",
   "treasury10y": {
     "source": "fred",
     "label": "U.S. Treasury daily par yield curve",
     "latest": {
-      "date": "2026-11-23",
-      "value": 4.92
+      "date": "2026-11-24",
+      "value": 4.91
     },
     "previous": {
-      "date": "2026-11-20",
+      "date": "2026-11-23",
       "value": 4.92
     }
   },
@@ -23,22 +23,22 @@
     "DGS10": {
       "source": "U.S. Treasury daily par yield curve",
       "latest": {
-        "date": "2026-11-23",
-        "value": 4.92
+        "date": "2026-11-24",
+        "value": 4.91
       },
       "previous": {
-        "date": "2026-11-20",
+        "date": "2026-11-23",
         "value": 4.92
       }
     },
     "DGS2": {
       "source": "U.S. Treasury daily par yield curve",
       "latest": {
-        "date": "2026-11-23",
+        "date": "2026-11-24",
         "value": 4.63
       },
       "previous": {
-        "date": "2026-11-20",
+        "date": "2026-11-23",
         "value": 4.63
       }
     },
@@ -67,22 +67,22 @@
     "DFEDTARU": {
       "source": "FRED DFEDTARU",
       "latest": {
-        "date": "2026-11-23",
+        "date": "2026-11-24",
         "value": 4.0
       },
       "previous": {
-        "date": "2026-11-22",
+        "date": "2026-11-23",
         "value": 4.0
       }
     },
     "DFEDTARL": {
       "source": "FRED DFEDTARL",
       "latest": {
-        "date": "2026-11-23",
+        "date": "2026-11-24",
         "value": 3.75
       },
       "previous": {
-        "date": "2026-11-22",
+        "date": "2026-11-23",
         "value": 3.75
       }
     },

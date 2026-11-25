@@ -1,100 +1,100 @@
 {
-  "updatedAt": "2026-11-25T10:19:30+00:00",
+  "updatedAt": "2026-11-25T22:36:25+00:00",
   "updatedBy": "GitHub Actions (automatic)",
   "treasury10y": {
     "source": "fred",
     "label": "U.S. Treasury daily par yield curve",
     "latest": {
-      "date": "2026-11-24",
-      "value": 4.91
+      "date": "2026-11-25",
+      "value": 4.85
     },
     "previous": {
-      "date": "2026-11-23",
-      "value": 4.92
+      "date": "2026-11-24",
+      "value": 4.91
     }
   },
   "oil": {
-    "price": 81.62,
-    "previous_close": 83.98,
-    "datetime": "2026-11-25T10:09:23+00:00",
-    "source": "Yahoo Finance CL=F"
+    "price": 82.24,
+    "previous_close": 81.42,
+    "datetime": "2026-11-24",
+    "source": "FRED DCOILWTICO (daily spot)"
   },
   "series": {
     "DGS10": {
       "source": "U.S. Treasury daily par yield curve",
       "latest": {
-        "date": "2026-11-24",
-        "value": 4.91
+        "date": "2026-11-25",
+        "value": 4.85
       },
       "previous": {
-        "date": "2026-11-23",
-        "value": 4.92
+        "date": "2026-11-24",
+        "value": 4.91
       }
     },
     "DGS2": {
       "source": "U.S. Treasury daily par yield curve",
       "latest": {
-        "date": "2026-11-24",
-        "value": 4.63
+        "date": "2026-11-25",
+        "value": 4.61
       },
       "previous": {
-        "date": "2026-11-23",
+        "date": "2026-11-24",
         "value": 4.63
       }
     },
     "MORTGAGE30US": {
       "source": "Freddie Mac PMMS",
       "latest": {
-        "date": "2026-11-19",
-        "value": 7.28
+        "date": "2026-11-25",
+        "value": 7.21
       },
       "previous": {
-        "date": "2026-11-12",
-        "value": 7.11
+        "date": "2026-11-19",
+        "value": 7.28
       }
     },
     "MORTGAGE15US": {
       "source": "Freddie Mac PMMS",
       "latest": {
-        "date": "2026-11-19",
-        "value": 6.66
+        "date": "2026-11-25",
+        "value": 6.54
       },
       "previous": {
-        "date": "2026-11-12",
-        "value": 6.45
+        "date": "2026-11-19",
+        "value": 6.66
       }
     },
     "DFEDTARU": {
       "source": "FRED DFEDTARU",
       "latest": {
-        "date": "2026-11-24",
+        "date": "2026-11-25",
         "value": 4.0
       },
       "previous": {
-        "date": "2026-11-23",
+        "date": "2026-11-24",
         "value": 4.0
       }
     },
     "DFEDTARL": {
       "source": "FRED DFEDTARL",
       "latest": {
-        "date": "2026-11-24",
+        "date": "2026-11-25",
         "value": 3.75
       },
       "previous": {
-        "date": "2026-11-23",
+        "date": "2026-11-24",
         "value": 3.75
       }
     },
     "DCOILWTICO": {
       "source": "FRED DCOILWTICO",
       "latest": {
-        "date": "2026-11-17",
-        "value": 89.53
+        "date": "2026-11-24",
+        "value": 82.24
       },
       "previous": {
-        "date": "2026-11-16",
-        "value": 89.24
+        "date": "2026-11-23",
+        "value": 81.42
       }
     }
   }

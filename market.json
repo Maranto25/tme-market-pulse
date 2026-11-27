@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-11-27T10:02:21+00:00",
+  "updatedAt": "2026-11-27T22:04:34+00:00",
   "updatedBy": "GitHub Actions (automatic)",
   "treasury10y": {
     "source": "fred",
     "label": "U.S. Treasury daily par yield curve",
     "latest": {
-      "date": "2026-11-25",
-      "value": 4.85
+      "date": "2026-11-27",
+      "value": 4.94
     },
     "previous": {
-      "date": "2026-11-24",
-      "value": 4.91
+      "date": "2026-11-25",
+      "value": 4.85
     }
   },
   "oil": {
@@ -23,23 +23,23 @@
     "DGS10": {
       "source": "U.S. Treasury daily par yield curve",
       "latest": {
-        "date": "2026-11-25",
-        "value": 4.85
+        "date": "2026-11-27",
+        "value": 4.94
       },
       "previous": {
-        "date": "2026-11-24",
-        "value": 4.91
+        "date": "2026-11-25",
+        "value": 4.85
       }
     },
     "DGS2": {
       "source": "U.S. Treasury daily par yield curve",
       "latest": {
-        "date": "2026-11-25",
-        "value": 4.61
+        "date": "2026-11-27",
+        "value": 4.69
       },
       "previous": {
-        "date": "2026-11-24",
-        "value": 4.63
+        "date": "2026-11-25",
+        "value": 4.61
       }
     },
     "MORTGAGE30US": {
@@ -67,22 +67,22 @@
     "DFEDTARU": {
       "source": "FRED DFEDTARU",
       "latest": {
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "value": 4.0
       },
       "previous": {
-        "date": "2026-11-25",
+        "date": "2026-11-26",
         "value": 4.0
       }
     },
     "DFEDTARL": {
       "source": "FRED DFEDTARL",
       "latest": {
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "value": 3.75
       },
       "previous": {
-        "date": "2026-11-25",
+        "date": "2026-11-26",
         "value": 3.75
       }
     },
